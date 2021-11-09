@@ -37,6 +37,7 @@ namespace cutting_chart
             this.LeftBorder = new System.Windows.Forms.Panel();
             this.DownBorder = new System.Windows.Forms.Panel();
             this.BackGroundPic = new System.Windows.Forms.Panel();
+            this.ShowPassPic = new System.Windows.Forms.PictureBox();
             this.LoginButton = new System.Windows.Forms.Button();
             this.ForgotPassLabel = new System.Windows.Forms.Label();
             this.RegistrationLabel = new System.Windows.Forms.Label();
@@ -44,18 +45,18 @@ namespace cutting_chart
             this.LoginField = new System.Windows.Forms.TextBox();
             this.IconUser = new System.Windows.Forms.PictureBox();
             this.IconPass = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TopBorder.SuspendLayout();
             this.BackGroundPic.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowPassPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconPass)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // TopBorder
             // 
             this.TopBorder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(28)))), ((int)(((byte)(54)))));
             this.TopBorder.Controls.Add(this.CloseAppButton);
+            this.TopBorder.Cursor = System.Windows.Forms.Cursors.NoMove2D;
             this.TopBorder.Dock = System.Windows.Forms.DockStyle.Top;
             this.TopBorder.Location = new System.Drawing.Point(0, 0);
             this.TopBorder.Name = "TopBorder";
@@ -113,7 +114,7 @@ namespace cutting_chart
             // 
             this.BackGroundPic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(187)))), ((int)(((byte)(253)))));
             this.BackGroundPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BackGroundPic.Controls.Add(this.pictureBox1);
+            this.BackGroundPic.Controls.Add(this.ShowPassPic);
             this.BackGroundPic.Controls.Add(this.LoginButton);
             this.BackGroundPic.Controls.Add(this.ForgotPassLabel);
             this.BackGroundPic.Controls.Add(this.RegistrationLabel);
@@ -126,6 +127,20 @@ namespace cutting_chart
             this.BackGroundPic.Name = "BackGroundPic";
             this.BackGroundPic.Size = new System.Drawing.Size(486, 410);
             this.BackGroundPic.TabIndex = 4;
+            // 
+            // ShowPassPic
+            // 
+            this.ShowPassPic.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ShowPassPic.Image = ((System.Drawing.Image)(resources.GetObject("ShowPassPic.Image")));
+            this.ShowPassPic.Location = new System.Drawing.Point(362, 165);
+            this.ShowPassPic.Name = "ShowPassPic";
+            this.ShowPassPic.Size = new System.Drawing.Size(39, 29);
+            this.ShowPassPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ShowPassPic.TabIndex = 9;
+            this.ShowPassPic.TabStop = false;
+            this.ShowPassPic.Click += new System.EventHandler(this.ShowPassPic_Click);
+            this.ShowPassPic.MouseEnter += new System.EventHandler(this.ShowPassPic_MouseEnter);
+            this.ShowPassPic.MouseLeave += new System.EventHandler(this.ShowPassPic_MouseLeave);
             // 
             // LoginButton
             // 
@@ -142,6 +157,8 @@ namespace cutting_chart
             this.LoginButton.TabIndex = 8;
             this.LoginButton.Text = "Войти";
             this.LoginButton.UseVisualStyleBackColor = true;
+            this.LoginButton.MouseEnter += new System.EventHandler(this.LoginButton_MouseEnter);
+            this.LoginButton.MouseLeave += new System.EventHandler(this.LoginButton_MouseLeave);
             // 
             // ForgotPassLabel
             // 
@@ -154,6 +171,8 @@ namespace cutting_chart
             this.ForgotPassLabel.Size = new System.Drawing.Size(123, 19);
             this.ForgotPassLabel.TabIndex = 5;
             this.ForgotPassLabel.Text = "Забыли пароль?";
+            this.ForgotPassLabel.MouseEnter += new System.EventHandler(this.ForgotPassLabel_MouseEnter);
+            this.ForgotPassLabel.MouseLeave += new System.EventHandler(this.ForgotPassLabel_MouseLeave);
             // 
             // RegistrationLabel
             // 
@@ -166,6 +185,8 @@ namespace cutting_chart
             this.RegistrationLabel.Size = new System.Drawing.Size(94, 19);
             this.RegistrationLabel.TabIndex = 4;
             this.RegistrationLabel.Text = "Регистрация";
+            this.RegistrationLabel.MouseEnter += new System.EventHandler(this.RegistrationLabel_MouseEnter);
+            this.RegistrationLabel.MouseLeave += new System.EventHandler(this.RegistrationLabel_MouseLeave);
             // 
             // PassField
             // 
@@ -209,16 +230,6 @@ namespace cutting_chart
             this.IconPass.TabIndex = 1;
             this.IconPass.TabStop = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(362, 165);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(39, 29);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            // 
             // Authorization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,9 +249,9 @@ namespace cutting_chart
             this.TopBorder.PerformLayout();
             this.BackGroundPic.ResumeLayout(false);
             this.BackGroundPic.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowPassPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconPass)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -261,6 +272,6 @@ namespace cutting_chart
         private System.Windows.Forms.TextBox PassField;
         private System.Windows.Forms.TextBox LoginField;
         private System.Windows.Forms.Button LoginButton;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox ShowPassPic;
     }
 }
