@@ -19,7 +19,7 @@ namespace cutting_chart
             this.PassField.AutoSize = false;
             this.PassField.Size = new Size(this.PassField.Size.Width, 30);
         }
-        
+        #region [CloseAppButton_Click]
         private void CloseAppButton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -34,7 +34,9 @@ namespace cutting_chart
         {
             CloseAppButton.ForeColor = Color.FromArgb(239, 243, 239);
         }
-        
+        #endregion
+
+        #region [TopBorder_MouseMove]
         Point lastPoint;
         private void TopBorder_MouseMove(object sender, MouseEventArgs e)
         {
@@ -50,6 +52,10 @@ namespace cutting_chart
         {
             lastPoint = new Point(e.X, e.Y);
         }
+
+        #endregion
+
+        #region [ShowPassPic]
 
         private void ShowPassPic_MouseEnter(object sender, EventArgs e)
         {
@@ -76,6 +82,10 @@ namespace cutting_chart
             }
         }
 
+        #endregion
+
+        #region [LoginButton]
+
         private void LoginButton_MouseEnter(object sender, EventArgs e)
         {
             LoginButton.ForeColor = Color.Green;
@@ -85,6 +95,10 @@ namespace cutting_chart
         {
             LoginButton.ForeColor = Color.White;
         }
+
+        #endregion
+
+        #region [RegistrationLabel]
 
         private void RegistrationLabel_MouseEnter(object sender, EventArgs e)
         {
@@ -96,6 +110,10 @@ namespace cutting_chart
             RegistrationLabel.ForeColor = Color.White;
         }
 
+        #endregion
+
+        #region [ForgotPassLabel]
+
         private void ForgotPassLabel_MouseEnter(object sender, EventArgs e)
         {
             ForgotPassLabel.ForeColor = Color.Green;
@@ -105,5 +123,6 @@ namespace cutting_chart
         {
             ForgotPassLabel.ForeColor = Color.White;
         }
+        #endregion
     }
 }
