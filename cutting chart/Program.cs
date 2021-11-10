@@ -16,8 +16,8 @@ namespace cutting_chart
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RegistrationForm());
-            //Application.Run(new Authorization());
+            //Application.Run(new RegistrationForm());
+            Application.Run(new Authorization());
 
         }
     }

@@ -31,6 +31,7 @@ namespace cutting_chart
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Authorization));
             this.TopBorder = new System.Windows.Forms.Panel();
+            this.AuthorizationLabel = new System.Windows.Forms.Label();
             this.CloseAppButton = new System.Windows.Forms.Label();
             this.RightBorder = new System.Windows.Forms.Panel();
             this.LeftBorder = new System.Windows.Forms.Panel();
@@ -44,7 +45,6 @@ namespace cutting_chart
             this.LoginField = new System.Windows.Forms.TextBox();
             this.IconUser = new System.Windows.Forms.PictureBox();
             this.IconPass = new System.Windows.Forms.PictureBox();
-            this.AuthorizationLabel = new System.Windows.Forms.Label();
             this.TopBorder.SuspendLayout();
             this.BackGroundPic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ShowPassPic)).BeginInit();
@@ -65,6 +65,17 @@ namespace cutting_chart
             this.TopBorder.TabIndex = 0;
             this.TopBorder.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TopBorder_MouseDown);
             this.TopBorder.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TopBorder_MouseMove);
+            // 
+            // AuthorizationLabel
+            // 
+            this.AuthorizationLabel.AutoSize = true;
+            this.AuthorizationLabel.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AuthorizationLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.AuthorizationLabel.Location = new System.Drawing.Point(3, 2);
+            this.AuthorizationLabel.Name = "AuthorizationLabel";
+            this.AuthorizationLabel.Size = new System.Drawing.Size(105, 21);
+            this.AuthorizationLabel.TabIndex = 1;
+            this.AuthorizationLabel.Text = "Авторизация";
             // 
             // CloseAppButton
             // 
@@ -133,7 +144,7 @@ namespace cutting_chart
             // 
             this.ShowPassPic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ShowPassPic.Image = ((System.Drawing.Image)(resources.GetObject("ShowPassPic.Image")));
-            this.ShowPassPic.Location = new System.Drawing.Point(362, 165);
+            this.ShowPassPic.Location = new System.Drawing.Point(371, 166);
             this.ShowPassPic.Name = "ShowPassPic";
             this.ShowPassPic.Size = new System.Drawing.Size(39, 29);
             this.ShowPassPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -193,20 +204,25 @@ namespace cutting_chart
             // PassField
             // 
             this.PassField.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PassField.ForeColor = System.Drawing.SystemColors.GrayText;
             this.PassField.Location = new System.Drawing.Point(149, 165);
             this.PassField.Name = "PassField";
             this.PassField.Size = new System.Drawing.Size(216, 34);
             this.PassField.TabIndex = 3;
-            this.PassField.UseSystemPasswordChar = true;
+            this.PassField.Enter += new System.EventHandler(this.PassField_Enter);
+            this.PassField.Leave += new System.EventHandler(this.PassField_Leave);
             // 
             // LoginField
             // 
             this.LoginField.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LoginField.ForeColor = System.Drawing.SystemColors.GrayText;
             this.LoginField.Location = new System.Drawing.Point(149, 104);
             this.LoginField.Multiline = true;
             this.LoginField.Name = "LoginField";
             this.LoginField.Size = new System.Drawing.Size(216, 30);
             this.LoginField.TabIndex = 2;
+            this.LoginField.Enter += new System.EventHandler(this.LoginField_Enter);
+            this.LoginField.Leave += new System.EventHandler(this.LoginField_Leave);
             // 
             // IconUser
             // 
@@ -231,17 +247,6 @@ namespace cutting_chart
             this.IconPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.IconPass.TabIndex = 1;
             this.IconPass.TabStop = false;
-            // 
-            // AuthorizationLabel
-            // 
-            this.AuthorizationLabel.AutoSize = true;
-            this.AuthorizationLabel.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AuthorizationLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.AuthorizationLabel.Location = new System.Drawing.Point(3, 2);
-            this.AuthorizationLabel.Name = "AuthorizationLabel";
-            this.AuthorizationLabel.Size = new System.Drawing.Size(105, 21);
-            this.AuthorizationLabel.TabIndex = 1;
-            this.AuthorizationLabel.Text = "Авторизация";
             // 
             // Authorization
             // 

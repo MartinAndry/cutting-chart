@@ -17,9 +17,53 @@ namespace cutting_chart
         {
             InitializeComponent();
 
-            this.PassField.AutoSize = false;
-            this.PassField.Size = new Size(this.PassField.Size.Width, 30);
+            LoginField.Text = "Логин";
+            PassField.Text = "Пароль";
+            //this.PassField.AutoSize = false;
+            //this.PassField.Size = new Size(this.PassField.Size.Width, 30);
         }
+        #region [LoginField]
+        private void LoginField_Enter(object sender, EventArgs e)
+        {
+            if (LoginField.Text == "Логин")
+            {
+                LoginField.Text = "";
+                LoginField.ForeColor = Color.Black;
+            }
+        }
+
+        private void LoginField_Leave(object sender, EventArgs e)
+        {
+            if (LoginField.Text == "")
+            {
+                LoginField.Text = "Логин";
+                LoginField.ForeColor = Color.Gray;
+            }
+        }
+        #endregion
+
+        #region [PassField]
+        private void PassField_Enter(object sender, EventArgs e)
+        {
+            if (PassField.Text == "Пароль")
+            {
+                PassField.UseSystemPasswordChar = true;
+                PassField.Text = "";
+                PassField.ForeColor = Color.Black;
+            }
+        }
+
+        private void PassField_Leave(object sender, EventArgs e)
+        {
+            if (PassField.Text == "")
+            {
+                PassField.UseSystemPasswordChar = false;
+                PassField.Text = "Пароль";
+                PassField.ForeColor = Color.Gray;
+            }
+        }
+        #endregion
+
         #region [CloseAppButton_Click]
         private void CloseAppButton_Click(object sender, EventArgs e)
         {
@@ -68,18 +112,24 @@ namespace cutting_chart
 
         private void ShowPassPic_MouseLeave(object sender, EventArgs e)
         {
+            if (PassField.Text == "Пароль")
+                PassField.ForeColor = Color.Gray;
+            else
             PassField.ForeColor = Color.Black;
         }
 
         private void ShowPassPic_Click(object sender, EventArgs e)
         {
-            if (PassField.UseSystemPasswordChar)
+            if (!PassField.UseSystemPasswordChar)
             {
-                PassField.UseSystemPasswordChar = false;
+                if (PassField.Text != "Пароль")
+                {
+                    PassField.UseSystemPasswordChar = true;
+                }
             }
             else
             {
-                PassField.UseSystemPasswordChar = true;
+                PassField.UseSystemPasswordChar = false;
             }
         }
 
@@ -136,10 +186,11 @@ namespace cutting_chart
             RegistrationLabel.ForeColor = Color.White;
         }
 
-        //private void RegistrationLabel_Click(object sender, EventArgs e)
-        //{
-        //    Application.Run(new RegistrationForm());
-        //}
+        private void RegistrationLabel_Click(object sender, EventArgs e)
+        {
+            //Close();
+            ////Application.Run(new RegistrationForm());
+        }
 
         #endregion
 
@@ -155,6 +206,7 @@ namespace cutting_chart
             ForgotPassLabel.ForeColor = Color.White;
         }
         #endregion
+
 
     }
 }
