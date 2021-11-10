@@ -30,7 +30,6 @@ namespace cutting_chart
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Authorization));
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.TopBorder = new System.Windows.Forms.Panel();
             this.CloseAppButton = new System.Windows.Forms.Label();
             this.RightBorder = new System.Windows.Forms.Panel();
@@ -71,7 +70,7 @@ namespace cutting_chart
             this.CloseAppButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CloseAppButton.Font = new System.Drawing.Font("Segoe Script", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CloseAppButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(239)))));
-            this.CloseAppButton.Location = new System.Drawing.Point(474, -3);
+            this.CloseAppButton.Location = new System.Drawing.Point(474, 0);
             this.CloseAppButton.Margin = new System.Windows.Forms.Padding(0);
             this.CloseAppButton.Name = "CloseAppButton";
             this.CloseAppButton.Padding = new System.Windows.Forms.Padding(0, 3, 3, 0);
@@ -127,7 +126,6 @@ namespace cutting_chart
             this.BackGroundPic.Name = "BackGroundPic";
             this.BackGroundPic.Size = new System.Drawing.Size(486, 410);
             this.BackGroundPic.TabIndex = 4;
-            this.BackGroundPic.Paint += new System.Windows.Forms.PaintEventHandler(this.BackGroundPic_Paint);
             // 
             // ShowPassPic
             // 
@@ -158,6 +156,7 @@ namespace cutting_chart
             this.LoginButton.TabIndex = 8;
             this.LoginButton.Text = "Войти";
             this.LoginButton.UseVisualStyleBackColor = true;
+            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
             this.LoginButton.MouseEnter += new System.EventHandler(this.LoginButton_MouseEnter);
             this.LoginButton.MouseLeave += new System.EventHandler(this.LoginButton_MouseLeave);
             // 
@@ -258,8 +257,6 @@ namespace cutting_chart
         }
 
         #endregion
-
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Panel TopBorder;
         private System.Windows.Forms.Panel RightBorder;
         private System.Windows.Forms.Panel LeftBorder;

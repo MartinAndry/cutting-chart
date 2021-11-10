@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -125,8 +126,28 @@ namespace cutting_chart
         }
         #endregion
 
-        private void BackGroundPic_Paint(object sender, PaintEventArgs e)
+        private void LoginButton_Click(object sender, EventArgs e)
         {
+            string loginUser = LoginField.Text;
+            string passwordUser = PassField.Text;
+
+            DataBase database = new DataBase();
+
+            DataTable table = new DataTable();
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `login` = @ul AND pass = @up", database.GetConnection());
+            command.Parameters.Add("@ul", MySqlDbType.VarChar).Value = loginUser;
+            command.Parameters.Add("@up", MySqlDbType.VarChar).Value = passwordUser;
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            if (table.Rows.Count > 0)
+                MessageBox.Show("Successfully");
+            else
+                MessageBox.Show("Unsuccessfully");
 
         }
     }
