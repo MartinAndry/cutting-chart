@@ -97,35 +97,6 @@ namespace cutting_chart
             LoginButton.ForeColor = Color.White;
         }
 
-        #endregion
-
-        #region [RegistrationLabel]
-
-        private void RegistrationLabel_MouseEnter(object sender, EventArgs e)
-        {
-            RegistrationLabel.ForeColor = Color.Green;
-        }
-
-        private void RegistrationLabel_MouseLeave(object sender, EventArgs e)
-        {
-            RegistrationLabel.ForeColor = Color.White;
-        }
-
-        #endregion
-
-        #region [ForgotPassLabel]
-
-        private void ForgotPassLabel_MouseEnter(object sender, EventArgs e)
-        {
-            ForgotPassLabel.ForeColor = Color.Green;
-        }
-
-        private void ForgotPassLabel_MouseLeave(object sender, EventArgs e)
-        {
-            ForgotPassLabel.ForeColor = Color.White;
-        }
-        #endregion
-
         private void LoginButton_Click(object sender, EventArgs e)
         {
             string loginUser = LoginField.Text;
@@ -144,11 +115,46 @@ namespace cutting_chart
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
-            if (table.Rows.Count > 0)
+            if (table.Rows.Count == 1)
                 MessageBox.Show("Successfully");
             else
                 MessageBox.Show("Unsuccessfully");
 
         }
+
+        #endregion
+
+        #region [RegistrationLabel]
+
+        private void RegistrationLabel_MouseEnter(object sender, EventArgs e)
+        {
+            RegistrationLabel.ForeColor = Color.Green;
+        }
+
+        private void RegistrationLabel_MouseLeave(object sender, EventArgs e)
+        {
+            RegistrationLabel.ForeColor = Color.White;
+        }
+
+        //private void RegistrationLabel_Click(object sender, EventArgs e)
+        //{
+        //    Application.Run(new RegistrationForm());
+        //}
+
+        #endregion
+
+        #region [ForgotPassLabel]
+
+        private void ForgotPassLabel_MouseEnter(object sender, EventArgs e)
+        {
+            ForgotPassLabel.ForeColor = Color.Green;
+        }
+
+        private void ForgotPassLabel_MouseLeave(object sender, EventArgs e)
+        {
+            ForgotPassLabel.ForeColor = Color.White;
+        }
+        #endregion
+
     }
 }

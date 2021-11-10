@@ -44,6 +44,7 @@ namespace cutting_chart
             this.LoginField = new System.Windows.Forms.TextBox();
             this.IconUser = new System.Windows.Forms.PictureBox();
             this.IconPass = new System.Windows.Forms.PictureBox();
+            this.AuthorizationLabel = new System.Windows.Forms.Label();
             this.TopBorder.SuspendLayout();
             this.BackGroundPic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ShowPassPic)).BeginInit();
@@ -54,6 +55,7 @@ namespace cutting_chart
             // TopBorder
             // 
             this.TopBorder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(28)))), ((int)(((byte)(54)))));
+            this.TopBorder.Controls.Add(this.AuthorizationLabel);
             this.TopBorder.Controls.Add(this.CloseAppButton);
             this.TopBorder.Cursor = System.Windows.Forms.Cursors.NoMove2D;
             this.TopBorder.Dock = System.Windows.Forms.DockStyle.Top;
@@ -230,6 +232,17 @@ namespace cutting_chart
             this.IconPass.TabIndex = 1;
             this.IconPass.TabStop = false;
             // 
+            // AuthorizationLabel
+            // 
+            this.AuthorizationLabel.AutoSize = true;
+            this.AuthorizationLabel.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AuthorizationLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.AuthorizationLabel.Location = new System.Drawing.Point(3, 2);
+            this.AuthorizationLabel.Name = "AuthorizationLabel";
+            this.AuthorizationLabel.Size = new System.Drawing.Size(105, 21);
+            this.AuthorizationLabel.TabIndex = 1;
+            this.AuthorizationLabel.Text = "Авторизация";
+            // 
             // Authorization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,5 +284,6 @@ namespace cutting_chart
         private System.Windows.Forms.TextBox LoginField;
         private System.Windows.Forms.Button LoginButton;
         private System.Windows.Forms.PictureBox ShowPassPic;
+        private System.Windows.Forms.Label AuthorizationLabel;
     }
 }
