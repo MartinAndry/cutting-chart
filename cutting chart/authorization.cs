@@ -124,5 +124,10 @@ namespace cutting_chart
             ForgotPassLabel.ForeColor = Color.White;
         }
         #endregion
+
+        private void BackGroundPic_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

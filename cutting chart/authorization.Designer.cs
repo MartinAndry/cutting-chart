@@ -127,6 +127,7 @@ namespace cutting_chart
             this.BackGroundPic.Name = "BackGroundPic";
             this.BackGroundPic.Size = new System.Drawing.Size(486, 410);
             this.BackGroundPic.TabIndex = 4;
+            this.BackGroundPic.Paint += new System.Windows.Forms.PaintEventHandler(this.BackGroundPic_Paint);
             // 
             // ShowPassPic
             // 
