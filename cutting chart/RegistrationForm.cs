@@ -15,6 +15,13 @@ namespace cutting_chart
         public RegistrationForm()
         {
             InitializeComponent();
+            NameField.Text = "Имя";
+            SurnameField.Text = "Фамилия";
+            PhoneField.Text = "Телефон";
+            LoginField.Text = "Логин";
+            PassField.Text = "Пароль";
+            PassField2.Text = "Повторите пароль";
+
         }
 
         #region [CloseAppButton_Click]
@@ -60,6 +67,10 @@ namespace cutting_chart
             if (PassField.UseSystemPasswordChar)
             {
                 PassField.ForeColor = Color.Red;
+            }
+
+            if (PassField2.UseSystemPasswordChar)
+            {
                 PassField2.ForeColor = Color.Red;
             }
         }
@@ -72,19 +83,156 @@ namespace cutting_chart
 
         private void ShowPassPic_Click(object sender, EventArgs e)
         {
-            if (PassField.UseSystemPasswordChar)
+            if (!PassField.UseSystemPasswordChar)
             {
-                PassField.UseSystemPasswordChar = false;
-                PassField2.UseSystemPasswordChar = false;
+                if (PassField.Text != "Пароль")
+                {
+                    PassField.UseSystemPasswordChar = true;
+                }
             }
             else
             {
-                PassField.UseSystemPasswordChar = true;
-                PassField2.UseSystemPasswordChar = true;
+                PassField.UseSystemPasswordChar = false;
+            }
 
+            if (!PassField2.UseSystemPasswordChar)
+            {
+                if (PassField2.Text != "Повторите пароль")
+                {
+                    PassField2.UseSystemPasswordChar = true;
+                }
+            }
+            else
+            {
+                PassField2.UseSystemPasswordChar = false;
+            }
+
+        }
+
+        #endregion
+
+        #region [NameField]
+        private void NameField_Enter(object sender, EventArgs e)
+        {
+            if (NameField.Text == "Имя")
+            {
+                NameField.Text = "";
+                NameField.ForeColor = Color.Black;
             }
         }
 
+        private void NameField_Leave(object sender, EventArgs e)
+        {
+            if (NameField.Text == "")
+            {
+                NameField.Text = "Имя";
+                NameField.ForeColor = Color.Gray;
+            }
+        }
+        #endregion
+
+        #region [SurnameField]
+        private void SurnameField_Enter(object sender, EventArgs e)
+        {
+            if (SurnameField.Text == "Фамилия")
+            {
+                SurnameField.Text = "";
+                SurnameField.ForeColor = Color.Black;
+            }
+        }
+
+        private void SurnameField_Leave(object sender, EventArgs e)
+        {
+            if (SurnameField.Text == "")
+            {
+                SurnameField.Text = "Фамилия";
+                SurnameField.ForeColor = Color.Gray;
+            }
+        }
+        #endregion
+
+        #region [PhoneField]
+        private void PhoneField_Enter(object sender, EventArgs e)
+        {
+            if (PhoneField.Text == "Телефон")
+            {
+                PhoneField.Text = "";
+                PhoneField.ForeColor = Color.Black;
+            }
+        }
+
+        private void PhoneField_Leave(object sender, EventArgs e)
+        {
+            if (PhoneField.Text == "")
+            {
+                PhoneField.Text = "Телефон";
+                PhoneField.ForeColor = Color.Gray;
+            }
+        }
+        #endregion
+
+        #region [LoginField]
+        private void LoginField_Enter(object sender, EventArgs e)
+        {
+            if (LoginField.Text == "Логин")
+            {
+                LoginField.Text = "";
+                LoginField.ForeColor = Color.Black;
+            }
+        }
+
+        private void LoginField_Leave(object sender, EventArgs e)
+        {
+            if (LoginField.Text == "")
+            {
+                LoginField.Text = "Логин";
+                LoginField.ForeColor = Color.Gray;
+            }
+        }
+        #endregion
+
+        #region [PassField]
+        private void PassField_Enter(object sender, EventArgs e)
+        {
+            if (PassField.Text == "Пароль")
+            {
+                PassField.UseSystemPasswordChar = true;
+                PassField.Text = "";
+                PassField.ForeColor = Color.Black;
+            }
+        }
+
+        private void PassField_Leave(object sender, EventArgs e)
+        {
+            if (PassField.Text == "")
+            {
+                PassField.UseSystemPasswordChar = false;
+                PassField.Text = "Пароль";
+                PassField.ForeColor = Color.Gray;
+            }
+        }
+        #endregion
+
+        #region [PassField2]
+        private void PassField2_Enter(object sender, EventArgs e)
+        {
+            if (PassField2.Text == "Повторите пароль")
+            {
+                PassField2.UseSystemPasswordChar = true;
+                PassField2.Text = "";
+                PassField2.ForeColor = Color.Black;
+            }
+        }
+
+        private void PassField2_Leave(object sender, EventArgs e)
+        {
+            if (PassField2.Text == "")
+            {
+                PassField2.UseSystemPasswordChar = false;
+                PassField2.Text = "Повторите пароль";
+                PassField2.ForeColor = Color.Gray;
+            }
+        }
         #endregion
     }
 }

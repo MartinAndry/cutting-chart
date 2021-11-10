@@ -192,16 +192,16 @@ namespace cutting_chart
             // 
             // PassField
             // 
-            this.PassField.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PassField.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PassField.Location = new System.Drawing.Point(149, 165);
             this.PassField.Name = "PassField";
-            this.PassField.Size = new System.Drawing.Size(216, 29);
+            this.PassField.Size = new System.Drawing.Size(216, 34);
             this.PassField.TabIndex = 3;
             this.PassField.UseSystemPasswordChar = true;
             // 
             // LoginField
             // 
-            this.LoginField.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LoginField.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LoginField.Location = new System.Drawing.Point(149, 104);
             this.LoginField.Multiline = true;
             this.LoginField.Name = "LoginField";

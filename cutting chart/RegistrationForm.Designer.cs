@@ -159,36 +159,51 @@ namespace cutting_chart
             // 
             // PhoneField
             // 
-            this.PhoneField.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PhoneField.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PhoneField.ForeColor = System.Drawing.SystemColors.GrayText;
             this.PhoneField.Location = new System.Drawing.Point(79, 166);
             this.PhoneField.Name = "PhoneField";
-            this.PhoneField.Size = new System.Drawing.Size(216, 29);
-            this.PhoneField.TabIndex = 14;
+            this.PhoneField.Size = new System.Drawing.Size(216, 34);
+            this.PhoneField.TabIndex = 4;
+            this.PhoneField.Text = "Номер телефона";
+            this.PhoneField.Enter += new System.EventHandler(this.PhoneField_Enter);
+            this.PhoneField.Leave += new System.EventHandler(this.PhoneField_Leave);
             // 
             // SurnameField
             // 
-            this.SurnameField.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SurnameField.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SurnameField.ForeColor = System.Drawing.SystemColors.GrayText;
             this.SurnameField.Location = new System.Drawing.Point(79, 108);
             this.SurnameField.Name = "SurnameField";
-            this.SurnameField.Size = new System.Drawing.Size(216, 29);
-            this.SurnameField.TabIndex = 13;
+            this.SurnameField.Size = new System.Drawing.Size(216, 34);
+            this.SurnameField.TabIndex = 3;
+            this.SurnameField.Text = "Фамилия";
+            this.SurnameField.Enter += new System.EventHandler(this.SurnameField_Enter);
+            this.SurnameField.Leave += new System.EventHandler(this.SurnameField_Leave);
             // 
             // LoginField
             // 
-            this.LoginField.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LoginField.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LoginField.ForeColor = System.Drawing.SystemColors.GrayText;
             this.LoginField.Location = new System.Drawing.Point(79, 223);
             this.LoginField.Name = "LoginField";
-            this.LoginField.Size = new System.Drawing.Size(216, 29);
-            this.LoginField.TabIndex = 12;
+            this.LoginField.Size = new System.Drawing.Size(216, 34);
+            this.LoginField.TabIndex = 5;
+            this.LoginField.Text = "Логин";
+            this.LoginField.Enter += new System.EventHandler(this.LoginField_Enter);
+            this.LoginField.Leave += new System.EventHandler(this.LoginField_Leave);
             // 
             // PassField2
             // 
-            this.PassField2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PassField2.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PassField2.ForeColor = System.Drawing.SystemColors.GrayText;
             this.PassField2.Location = new System.Drawing.Point(79, 338);
             this.PassField2.Name = "PassField2";
-            this.PassField2.Size = new System.Drawing.Size(216, 29);
-            this.PassField2.TabIndex = 11;
-            this.PassField2.UseSystemPasswordChar = true;
+            this.PassField2.Size = new System.Drawing.Size(216, 34);
+            this.PassField2.TabIndex = 7;
+            this.PassField2.Text = "Повторите пароль";
+            this.PassField2.Enter += new System.EventHandler(this.PassField2_Enter);
+            this.PassField2.Leave += new System.EventHandler(this.PassField2_Leave);
             // 
             // RegistrationButton
             // 
@@ -208,20 +223,26 @@ namespace cutting_chart
             // 
             // PassField
             // 
-            this.PassField.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PassField.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PassField.ForeColor = System.Drawing.SystemColors.GrayText;
             this.PassField.Location = new System.Drawing.Point(79, 280);
             this.PassField.Name = "PassField";
-            this.PassField.Size = new System.Drawing.Size(216, 29);
-            this.PassField.TabIndex = 3;
-            this.PassField.UseSystemPasswordChar = true;
+            this.PassField.Size = new System.Drawing.Size(216, 34);
+            this.PassField.TabIndex = 6;
+            this.PassField.Text = "Пароль";
+            this.PassField.Enter += new System.EventHandler(this.PassField_Enter);
+            this.PassField.Leave += new System.EventHandler(this.PassField_Leave);
             // 
             // NameField
             // 
-            this.NameField.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NameField.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NameField.ForeColor = System.Drawing.SystemColors.GrayText;
             this.NameField.Location = new System.Drawing.Point(79, 54);
             this.NameField.Name = "NameField";
-            this.NameField.Size = new System.Drawing.Size(216, 29);
+            this.NameField.Size = new System.Drawing.Size(216, 34);
             this.NameField.TabIndex = 2;
+            this.NameField.Enter += new System.EventHandler(this.NameField_Enter);
+            this.NameField.Leave += new System.EventHandler(this.NameField_Leave);
             // 
             // TopBorder
             // 
