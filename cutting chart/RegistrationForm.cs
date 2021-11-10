@@ -77,36 +77,65 @@ namespace cutting_chart
 
         private void ShowPassPic_MouseLeave(object sender, EventArgs e)
         {
-            PassField.ForeColor = Color.Black;
-            PassField2.ForeColor = Color.Black;
+            if (PassField.Text == "Пароль")
+                PassField.ForeColor = Color.Gray;
+            else
+                PassField.ForeColor = Color.Black;
+
+            if (PassField2.Text == "Повторите пароль")
+                PassField2.ForeColor = Color.Gray;
+            else
+                PassField2.ForeColor = Color.Black;
         }
 
         private void ShowPassPic_Click(object sender, EventArgs e)
         {
-            if (!PassField.UseSystemPasswordChar)
+            if (PassField.UseSystemPasswordChar != PassField2.UseSystemPasswordChar)
             {
-                if (PassField.Text != "Пароль")
+                if (PassField.Text != "Пароль" || PassField.Text != "")
                 {
-                    PassField.UseSystemPasswordChar = true;
+                    if (PassField2.Text != "Повторите пароль" || PassField2.Text != "")
+                    {
+                        PassField.UseSystemPasswordChar = true;
+                        PassField2.UseSystemPasswordChar = true;
+                    }
                 }
             }
-            else
+
+            if (PassField.UseSystemPasswordChar)
             {
                 PassField.UseSystemPasswordChar = false;
             }
-
-            if (!PassField2.UseSystemPasswordChar)
+            else if (!PassField.UseSystemPasswordChar)
             {
-                if (PassField2.Text != "Повторите пароль")
+                if (PassField.Text == "Пароль" || PassField.Text == "")
                 {
-                    PassField2.UseSystemPasswordChar = true;
+                    PassField.UseSystemPasswordChar = false;
+                }
+                else
+                {
+                    PassField.UseSystemPasswordChar = true;
+
                 }
             }
-            else
+
+
+            if (PassField2.UseSystemPasswordChar)
             {
                 PassField2.UseSystemPasswordChar = false;
             }
+            else if (!PassField2.UseSystemPasswordChar)
+            {
+                if (PassField2.Text == "Повторите пароль" || PassField2.Text == "")
+                {
+                    PassField2.UseSystemPasswordChar = false;
+                }
+                else
+                {
+                    PassField2.UseSystemPasswordChar = true;
 
+                }
+            }
         }
 
         #endregion
@@ -209,6 +238,11 @@ namespace cutting_chart
                 PassField.UseSystemPasswordChar = false;
                 PassField.Text = "Пароль";
                 PassField.ForeColor = Color.Gray;
+            }
+
+            if (PassField.Text == PassField2.Text)
+            {
+
             }
         }
         #endregion
