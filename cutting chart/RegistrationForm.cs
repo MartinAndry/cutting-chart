@@ -27,7 +27,7 @@ namespace cutting_chart
         #region [CloseAppButton_Click]
         private void CloseAppButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void CloseAppButton_MouseEnter(object sender, EventArgs e)
@@ -242,7 +242,7 @@ namespace cutting_chart
 
             if (PassField.Text == PassField2.Text)
             {
-
+            
             }
         }
         #endregion

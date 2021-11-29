@@ -67,7 +67,7 @@ namespace cutting_chart
         #region [CloseAppButton_Click]
         private void CloseAppButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void CloseAppButton_MouseEnter(object sender, EventArgs e)
@@ -118,7 +118,22 @@ namespace cutting_chart
             PassField.ForeColor = Color.Black;
         }
 
-        private void ShowPassPic_Click(object sender, EventArgs e)
+        private void ShowPassPic_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (!PassField.UseSystemPasswordChar)
+            {
+                if (PassField.Text != "Пароль")
+                {
+                    PassField.UseSystemPasswordChar = true;
+                }
+            }
+            else
+            {
+                PassField.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void ShowPassPic_MouseUp(object sender, MouseEventArgs e)
         {
             if (!PassField.UseSystemPasswordChar)
             {
@@ -188,8 +203,9 @@ namespace cutting_chart
 
         private void RegistrationLabel_Click(object sender, EventArgs e)
         {
-            //Close();
-            ////Application.Run(new RegistrationForm());
+            this.Hide();
+            RegistrationForm registrationForm = new RegistrationForm();
+            registrationForm.Show();
         }
 
         #endregion
@@ -205,8 +221,8 @@ namespace cutting_chart
         {
             ForgotPassLabel.ForeColor = Color.White;
         }
-        #endregion
 
+        #endregion
 
     }
 }

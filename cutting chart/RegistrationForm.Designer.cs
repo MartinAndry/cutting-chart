@@ -31,7 +31,8 @@ namespace cutting_chart
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrationForm));
             this.BackGroundPic = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.passwordOK = new System.Windows.Forms.PictureBox();
+            this.IconPass2 = new System.Windows.Forms.PictureBox();
             this.ShowPassPic = new System.Windows.Forms.PictureBox();
             this.IconUser = new System.Windows.Forms.PictureBox();
             this.IconPass = new System.Windows.Forms.PictureBox();
@@ -49,7 +50,8 @@ namespace cutting_chart
             this.RegistrationLabel = new System.Windows.Forms.Label();
             this.CloseAppButton = new System.Windows.Forms.Label();
             this.BackGroundPic.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordOK)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconPass2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ShowPassPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconPass)).BeginInit();
@@ -60,7 +62,8 @@ namespace cutting_chart
             // 
             this.BackGroundPic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(187)))), ((int)(((byte)(253)))));
             this.BackGroundPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BackGroundPic.Controls.Add(this.pictureBox1);
+            this.BackGroundPic.Controls.Add(this.passwordOK);
+            this.BackGroundPic.Controls.Add(this.IconPass2);
             this.BackGroundPic.Controls.Add(this.ShowPassPic);
             this.BackGroundPic.Controls.Add(this.IconUser);
             this.BackGroundPic.Controls.Add(this.IconPass);
@@ -80,17 +83,27 @@ namespace cutting_chart
             this.BackGroundPic.Size = new System.Drawing.Size(384, 590);
             this.BackGroundPic.TabIndex = 6;
             // 
-            // pictureBox1
+            // passwordOK
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(49, 337);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 21;
-            this.pictureBox1.TabStop = false;
+            this.passwordOK.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("passwordOK.BackgroundImage")));
+            this.passwordOK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.passwordOK.Location = new System.Drawing.Point(301, 338);
+            this.passwordOK.Name = "passwordOK";
+            this.passwordOK.Size = new System.Drawing.Size(39, 34);
+            this.passwordOK.TabIndex = 22;
+            this.passwordOK.TabStop = false;
+            // 
+            // IconPass2
+            // 
+            this.IconPass2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.IconPass2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("IconPass2.BackgroundImage")));
+            this.IconPass2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.IconPass2.Location = new System.Drawing.Point(49, 337);
+            this.IconPass2.Name = "IconPass2";
+            this.IconPass2.Size = new System.Drawing.Size(30, 30);
+            this.IconPass2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.IconPass2.TabIndex = 21;
+            this.IconPass2.TabStop = false;
             // 
             // ShowPassPic
             // 
@@ -299,7 +312,8 @@ namespace cutting_chart
             this.Text = "RegistrationForm";
             this.BackGroundPic.ResumeLayout(false);
             this.BackGroundPic.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordOK)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconPass2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ShowPassPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconPass)).EndInit();
@@ -328,6 +342,7 @@ namespace cutting_chart
         private System.Windows.Forms.PictureBox ShowPassPic;
         private System.Windows.Forms.PictureBox IconUser;
         private System.Windows.Forms.PictureBox IconPass;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox IconPass2;
+        private System.Windows.Forms.PictureBox passwordOK;
     }
 }

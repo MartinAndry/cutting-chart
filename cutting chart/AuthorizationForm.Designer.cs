@@ -150,9 +150,10 @@ namespace cutting_chart
             this.ShowPassPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ShowPassPic.TabIndex = 9;
             this.ShowPassPic.TabStop = false;
-            this.ShowPassPic.Click += new System.EventHandler(this.ShowPassPic_Click);
+            this.ShowPassPic.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ShowPassPic_MouseDown);
             this.ShowPassPic.MouseEnter += new System.EventHandler(this.ShowPassPic_MouseEnter);
             this.ShowPassPic.MouseLeave += new System.EventHandler(this.ShowPassPic_MouseLeave);
+            this.ShowPassPic.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ShowPassPic_MouseUp);
             // 
             // LoginButton
             // 
@@ -198,6 +199,7 @@ namespace cutting_chart
             this.RegistrationLabel.Size = new System.Drawing.Size(94, 19);
             this.RegistrationLabel.TabIndex = 4;
             this.RegistrationLabel.Text = "Регистрация";
+            this.RegistrationLabel.Click += new System.EventHandler(this.RegistrationLabel_Click);
             this.RegistrationLabel.MouseEnter += new System.EventHandler(this.RegistrationLabel_MouseEnter);
             this.RegistrationLabel.MouseLeave += new System.EventHandler(this.RegistrationLabel_MouseLeave);
             // 
