@@ -21,7 +21,42 @@ namespace cutting_chart
             LoginField.Text = "Логин";
             PassField.Text = "Пароль";
             PassField2.Text = "Повторите пароль";
+        }
+        
+        public bool IsValidInput()
+        {
+            if (NameField.Text == "Имя")
+            {
+                NameField.ForeColor = Color.Red;
+                return false;
+            }
 
+            else if (SurnameField.Text == "Фамилия")
+            {
+                SurnameField.ForeColor = Color.Red;
+                return false;
+            }
+
+            else if (PhoneField.Text == "Телефон")
+            {
+                PhoneField.ForeColor = Color.Red;
+                return false;
+            }
+
+            else if (LoginField.Text == "Логин")
+            {
+                LoginField.ForeColor = Color.Red;
+                return false;
+            }
+            else if (PassField.Text != PassField2.Text)
+            {
+                MessageBox.Show("Пароли не совпадают");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         #region [CloseAppButton_Click]
@@ -207,6 +242,10 @@ namespace cutting_chart
                 NameField.Text = "Имя";
                 NameField.ForeColor = Color.Gray;
             }
+            else
+            {
+                NameField.Text = char.ToUpper(NameField.Text[0]) + NameField.Text.Substring(1);
+            }
         }
         #endregion
 
@@ -226,6 +265,10 @@ namespace cutting_chart
             {
                 SurnameField.Text = "Фамилия";
                 SurnameField.ForeColor = Color.Gray;
+            }
+            else
+            {
+                SurnameField.Text = char.ToUpper(SurnameField.Text[0]) + SurnameField.Text.Substring(1);
             }
         }
         #endregion
@@ -289,11 +332,10 @@ namespace cutting_chart
                 PassField.Text = "Пароль";
                 PassField.ForeColor = Color.Gray;
             }
-
             if (PassField.Text == PassField2.Text)
-            {
-            
-            }
+                PasswordOK.Visible = true;
+            else
+                PasswordOK.Visible = false;
         }
         #endregion
 
@@ -316,8 +358,57 @@ namespace cutting_chart
                 PassField2.Text = "Повторите пароль";
                 PassField2.ForeColor = Color.Gray;
             }
+            if (PassField.Text == PassField2.Text)
+                PasswordOK.Visible = true;
+            else
+                PasswordOK.Visible = false;
+        }
+
+        #endregion
+
+        #region [RegistrationButton]
+
+        private void RegistrationButton_MouseEnter(object sender, EventArgs e)
+        {
+            RegistrationButton.ForeColor = Color.Green;
+        }
+
+
+        private void RegistrationButton_MouseLeave(object sender, EventArgs e)
+        {
+            RegistrationButton.ForeColor = Color.White;
+        }
+
+        private void RegistrationButton_Click(object sender, EventArgs e)
+        {
+            if (IsValidInput())
+            {
+                MessageBox.Show("+++++");
+            }
+            else
+            {
+                MessageBox.Show("-----");
+            }
         }
         #endregion
 
+        #region [GoToAuthorizationButton]
+        private void GoToAuthorizationButton_MouseEnter(object sender, EventArgs e)
+        {
+            GoToAuthorizationButton.ForeColor = Color.Green;
+        }
+
+        private void GoToAuthorizationButton_MouseLeave(object sender, EventArgs e)
+        {
+            GoToAuthorizationButton.ForeColor = Color.White;
+        }
+
+        private void GoToAuthorizationButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Authorization authorization = new Authorization();
+            authorization.Show();
+        }
+        #endregion
     }
 }

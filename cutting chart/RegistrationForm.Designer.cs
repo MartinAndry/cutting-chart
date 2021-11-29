@@ -31,7 +31,8 @@ namespace cutting_chart
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrationForm));
             this.BackGroundPic = new System.Windows.Forms.Panel();
-            this.passwordOK = new System.Windows.Forms.PictureBox();
+            this.GoToAuthorizationButton = new System.Windows.Forms.Button();
+            this.PasswordOK = new System.Windows.Forms.PictureBox();
             this.IconPass2 = new System.Windows.Forms.PictureBox();
             this.ShowPassPic = new System.Windows.Forms.PictureBox();
             this.IconUser = new System.Windows.Forms.PictureBox();
@@ -50,7 +51,7 @@ namespace cutting_chart
             this.RegistrationLabel = new System.Windows.Forms.Label();
             this.CloseAppButton = new System.Windows.Forms.Label();
             this.BackGroundPic.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.passwordOK)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PasswordOK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconPass2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ShowPassPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconUser)).BeginInit();
@@ -62,7 +63,8 @@ namespace cutting_chart
             // 
             this.BackGroundPic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(187)))), ((int)(((byte)(253)))));
             this.BackGroundPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BackGroundPic.Controls.Add(this.passwordOK);
+            this.BackGroundPic.Controls.Add(this.GoToAuthorizationButton);
+            this.BackGroundPic.Controls.Add(this.PasswordOK);
             this.BackGroundPic.Controls.Add(this.IconPass2);
             this.BackGroundPic.Controls.Add(this.ShowPassPic);
             this.BackGroundPic.Controls.Add(this.IconUser);
@@ -83,15 +85,35 @@ namespace cutting_chart
             this.BackGroundPic.Size = new System.Drawing.Size(384, 590);
             this.BackGroundPic.TabIndex = 6;
             // 
-            // passwordOK
+            // GoToAuthorizationButton
             // 
-            this.passwordOK.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("passwordOK.BackgroundImage")));
-            this.passwordOK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.passwordOK.Location = new System.Drawing.Point(301, 338);
-            this.passwordOK.Name = "passwordOK";
-            this.passwordOK.Size = new System.Drawing.Size(39, 34);
-            this.passwordOK.TabIndex = 22;
-            this.passwordOK.TabStop = false;
+            this.GoToAuthorizationButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.GoToAuthorizationButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GoToAuthorizationButton.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.GoToAuthorizationButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Moccasin;
+            this.GoToAuthorizationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GoToAuthorizationButton.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.GoToAuthorizationButton.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.GoToAuthorizationButton.Location = new System.Drawing.Point(90, 458);
+            this.GoToAuthorizationButton.Name = "GoToAuthorizationButton";
+            this.GoToAuthorizationButton.Size = new System.Drawing.Size(191, 41);
+            this.GoToAuthorizationButton.TabIndex = 9;
+            this.GoToAuthorizationButton.Text = "Авторизоваться";
+            this.GoToAuthorizationButton.UseVisualStyleBackColor = true;
+            this.GoToAuthorizationButton.Click += new System.EventHandler(this.GoToAuthorizationButton_Click);
+            this.GoToAuthorizationButton.MouseEnter += new System.EventHandler(this.GoToAuthorizationButton_MouseEnter);
+            this.GoToAuthorizationButton.MouseLeave += new System.EventHandler(this.GoToAuthorizationButton_MouseLeave);
+            // 
+            // PasswordOK
+            // 
+            this.PasswordOK.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PasswordOK.BackgroundImage")));
+            this.PasswordOK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PasswordOK.Location = new System.Drawing.Point(301, 338);
+            this.PasswordOK.Name = "PasswordOK";
+            this.PasswordOK.Size = new System.Drawing.Size(39, 34);
+            this.PasswordOK.TabIndex = 22;
+            this.PasswordOK.TabStop = false;
+            this.PasswordOK.Visible = false;
             // 
             // IconPass2
             // 
@@ -228,12 +250,15 @@ namespace cutting_chart
             this.RegistrationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RegistrationButton.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.RegistrationButton.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.RegistrationButton.Location = new System.Drawing.Point(90, 418);
+            this.RegistrationButton.Location = new System.Drawing.Point(90, 394);
             this.RegistrationButton.Name = "RegistrationButton";
             this.RegistrationButton.Size = new System.Drawing.Size(191, 41);
             this.RegistrationButton.TabIndex = 8;
             this.RegistrationButton.Text = "Зарегистрироваться";
             this.RegistrationButton.UseVisualStyleBackColor = true;
+            this.RegistrationButton.Click += new System.EventHandler(this.RegistrationButton_Click);
+            this.RegistrationButton.MouseEnter += new System.EventHandler(this.RegistrationButton_MouseEnter);
+            this.RegistrationButton.MouseLeave += new System.EventHandler(this.RegistrationButton_MouseLeave);
             // 
             // PassField
             // 
@@ -313,7 +338,7 @@ namespace cutting_chart
             this.Text = "RegistrationForm";
             this.BackGroundPic.ResumeLayout(false);
             this.BackGroundPic.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.passwordOK)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PasswordOK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconPass2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ShowPassPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconUser)).EndInit();
@@ -344,6 +369,7 @@ namespace cutting_chart
         private System.Windows.Forms.PictureBox IconUser;
         private System.Windows.Forms.PictureBox IconPass;
         private System.Windows.Forms.PictureBox IconPass2;
-        private System.Windows.Forms.PictureBox passwordOK;
+        private System.Windows.Forms.PictureBox PasswordOK;
+        private System.Windows.Forms.Button GoToAuthorizationButton;
     }
 }
