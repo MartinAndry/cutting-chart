@@ -115,9 +115,10 @@ namespace cutting_chart
             this.ShowPassPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ShowPassPic.TabIndex = 20;
             this.ShowPassPic.TabStop = false;
-            this.ShowPassPic.Click += new System.EventHandler(this.ShowPassPic_Click);
+            this.ShowPassPic.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ShowPassPic_MouseDown);
             this.ShowPassPic.MouseEnter += new System.EventHandler(this.ShowPassPic_MouseEnter);
             this.ShowPassPic.MouseLeave += new System.EventHandler(this.ShowPassPic_MouseLeave);
+            this.ShowPassPic.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ShowPassPic_MouseUp);
             // 
             // IconUser
             // 

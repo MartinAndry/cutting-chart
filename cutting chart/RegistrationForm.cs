@@ -88,7 +88,57 @@ namespace cutting_chart
                 PassField2.ForeColor = Color.Black;
         }
 
-        private void ShowPassPic_Click(object sender, EventArgs e)
+        private void ShowPassPic_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (PassField.UseSystemPasswordChar != PassField2.UseSystemPasswordChar)
+            {
+                if (PassField.Text != "Пароль" || PassField.Text != "")
+                {
+                    if (PassField2.Text != "Повторите пароль" || PassField2.Text != "")
+                    {
+                        PassField.UseSystemPasswordChar = true;
+                        PassField2.UseSystemPasswordChar = true;
+                    }
+                }
+            }
+
+            if (PassField.UseSystemPasswordChar)
+            {
+                PassField.UseSystemPasswordChar = false;
+            }
+            else if (!PassField.UseSystemPasswordChar)
+            {
+                if (PassField.Text == "Пароль" || PassField.Text == "")
+                {
+                    PassField.UseSystemPasswordChar = false;
+                }
+                else
+                {
+                    PassField.UseSystemPasswordChar = true;
+
+                }
+            }
+
+
+            if (PassField2.UseSystemPasswordChar)
+            {
+                PassField2.UseSystemPasswordChar = false;
+            }
+            else if (!PassField2.UseSystemPasswordChar)
+            {
+                if (PassField2.Text == "Повторите пароль" || PassField2.Text == "")
+                {
+                    PassField2.UseSystemPasswordChar = false;
+                }
+                else
+                {
+                    PassField2.UseSystemPasswordChar = true;
+
+                }
+            }
+        }
+
+        private void ShowPassPic_MouseUp(object sender, MouseEventArgs e)
         {
             if (PassField.UseSystemPasswordChar != PassField2.UseSystemPasswordChar)
             {
@@ -268,5 +318,6 @@ namespace cutting_chart
             }
         }
         #endregion
+
     }
 }
