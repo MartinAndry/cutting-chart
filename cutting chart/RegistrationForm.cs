@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,42 +22,6 @@ namespace cutting_chart
             LoginField.Text = "Логин";
             PassField.Text = "Пароль";
             PassField2.Text = "Повторите пароль";
-        }
-        
-        public bool IsValidInput()
-        {
-            if (NameField.Text == "Имя")
-            {
-                NameField.ForeColor = Color.Red;
-                return false;
-            }
-
-            else if (SurnameField.Text == "Фамилия")
-            {
-                SurnameField.ForeColor = Color.Red;
-                return false;
-            }
-
-            else if (PhoneField.Text == "Телефон")
-            {
-                PhoneField.ForeColor = Color.Red;
-                return false;
-            }
-
-            else if (LoginField.Text == "Логин")
-            {
-                LoginField.ForeColor = Color.Red;
-                return false;
-            }
-            else if (PassField.Text != PassField2.Text)
-            {
-                MessageBox.Show("Пароли не совпадают");
-                return false;
-            }
-            else
-            {
-                return true;
-            }
         }
 
         #region [CloseAppButton_Click]
@@ -366,6 +331,91 @@ namespace cutting_chart
 
         #endregion
 
+        #region [Is Valid Input ???]
+        public bool IsValidLogin()
+        {
+            if (LoginField.Text != "Логин")
+            {
+                string loginUser = LoginField.Text;
+
+                DataBase database = new DataBase();
+
+                DataTable table = new DataTable();
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `login` = @ul", database.GetConnection());
+                command.Parameters.Add("@ul", MySqlDbType.VarChar).Value = loginUser;
+
+                adapter.SelectCommand = command;
+                adapter.Fill(table);
+
+                if (table.Rows.Count == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Логин занят");
+                    return false;
+                }
+            }
+            else
+            {
+                LoginField.ForeColor = Color.Red;
+                return false;
+            }
+
+        }
+
+        //public bool IsValidPhone()
+        //{
+        //    return false;
+        //}
+
+        //public bool IsValidPassword()
+        //{
+        //    return false;
+        //}
+
+        public bool IsValidInput()
+        {
+            if (NameField.Text == "Имя")
+            {
+                NameField.ForeColor = Color.Red;
+                return false;
+            }
+
+            else if (SurnameField.Text == "Фамилия")
+            {
+                SurnameField.ForeColor = Color.Red;
+                return false;
+            }
+
+            else if (PhoneField.Text == "Телефон")
+            {
+                PhoneField.ForeColor = Color.Red;
+                return false;
+            }
+
+            else if (!IsValidLogin())
+            {
+                return false;
+            }
+
+            else if (PassField.Text != PassField2.Text)
+            {
+                MessageBox.Show("Пароли не совпадают");
+                return false;
+            }
+
+            else
+            {
+                return true;
+            }
+        }
+        #endregion
+
         #region [RegistrationButton]
 
         private void RegistrationButton_MouseEnter(object sender, EventArgs e)
@@ -383,11 +433,24 @@ namespace cutting_chart
         {
             if (IsValidInput())
             {
-                MessageBox.Show("+++++");
-            }
-            else
-            {
-                MessageBox.Show("-----");
+                DataBase db = new DataBase();
+                MySqlCommand command = new MySqlCommand("INSERT INTO `users` (`name`, `surname`, `phone`, `login`, `pass`) VALUES(@name, @surname, @phone, @login, @pass)", db.GetConnection());
+
+
+                command.Parameters.Add("@name", MySqlDbType.VarChar).Value = NameField.Text;
+                command.Parameters.Add("@surname", MySqlDbType.VarChar).Value = SurnameField.Text;
+                command.Parameters.Add("@phone", MySqlDbType.VarChar).Value = PhoneField.Text;
+                command.Parameters.Add("@login", MySqlDbType.VarChar).Value = LoginField.Text;
+                command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = PassField.Text;
+
+                db.OpenConnection();
+
+                if (command.ExecuteNonQuery() == 1)
+                    MessageBox.Show("+++");
+                else
+                    MessageBox.Show("---");
+
+                db.CloseConnection();
             }
         }
         #endregion

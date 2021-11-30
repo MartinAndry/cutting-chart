@@ -83,7 +83,7 @@ namespace cutting_chart
             this.BackGroundPic.Location = new System.Drawing.Point(0, 23);
             this.BackGroundPic.Name = "BackGroundPic";
             this.BackGroundPic.Size = new System.Drawing.Size(384, 590);
-            this.BackGroundPic.TabIndex = 6;
+            this.BackGroundPic.TabIndex = 0;
             // 
             // GoToAuthorizationButton
             // 
@@ -97,7 +97,7 @@ namespace cutting_chart
             this.GoToAuthorizationButton.Location = new System.Drawing.Point(90, 458);
             this.GoToAuthorizationButton.Name = "GoToAuthorizationButton";
             this.GoToAuthorizationButton.Size = new System.Drawing.Size(191, 41);
-            this.GoToAuthorizationButton.TabIndex = 9;
+            this.GoToAuthorizationButton.TabIndex = 1;
             this.GoToAuthorizationButton.Text = "Авторизоваться";
             this.GoToAuthorizationButton.UseVisualStyleBackColor = true;
             this.GoToAuthorizationButton.Click += new System.EventHandler(this.GoToAuthorizationButton_Click);
@@ -173,7 +173,7 @@ namespace cutting_chart
             this.DownBorder.Location = new System.Drawing.Point(5, 585);
             this.DownBorder.Name = "DownBorder";
             this.DownBorder.Size = new System.Drawing.Size(374, 5);
-            this.DownBorder.TabIndex = 17;
+            this.DownBorder.TabIndex = 0;
             // 
             // LeftBorder
             // 
@@ -182,7 +182,7 @@ namespace cutting_chart
             this.LeftBorder.Location = new System.Drawing.Point(0, 0);
             this.LeftBorder.Name = "LeftBorder";
             this.LeftBorder.Size = new System.Drawing.Size(5, 590);
-            this.LeftBorder.TabIndex = 16;
+            this.LeftBorder.TabIndex = 0;
             // 
             // RightBorder
             // 
@@ -191,13 +191,14 @@ namespace cutting_chart
             this.RightBorder.Location = new System.Drawing.Point(379, 0);
             this.RightBorder.Name = "RightBorder";
             this.RightBorder.Size = new System.Drawing.Size(5, 590);
-            this.RightBorder.TabIndex = 15;
+            this.RightBorder.TabIndex = 0;
             // 
             // PhoneField
             // 
             this.PhoneField.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PhoneField.ForeColor = System.Drawing.SystemColors.GrayText;
             this.PhoneField.Location = new System.Drawing.Point(79, 166);
+            this.PhoneField.MaxLength = 50;
             this.PhoneField.Name = "PhoneField";
             this.PhoneField.Size = new System.Drawing.Size(216, 34);
             this.PhoneField.TabIndex = 4;
@@ -210,6 +211,7 @@ namespace cutting_chart
             this.SurnameField.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SurnameField.ForeColor = System.Drawing.SystemColors.GrayText;
             this.SurnameField.Location = new System.Drawing.Point(79, 108);
+            this.SurnameField.MaxLength = 50;
             this.SurnameField.Name = "SurnameField";
             this.SurnameField.Size = new System.Drawing.Size(216, 34);
             this.SurnameField.TabIndex = 3;
@@ -222,6 +224,7 @@ namespace cutting_chart
             this.LoginField.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LoginField.ForeColor = System.Drawing.SystemColors.GrayText;
             this.LoginField.Location = new System.Drawing.Point(79, 223);
+            this.LoginField.MaxLength = 50;
             this.LoginField.Name = "LoginField";
             this.LoginField.Size = new System.Drawing.Size(216, 34);
             this.LoginField.TabIndex = 5;
@@ -234,6 +237,7 @@ namespace cutting_chart
             this.PassField2.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PassField2.ForeColor = System.Drawing.SystemColors.GrayText;
             this.PassField2.Location = new System.Drawing.Point(79, 338);
+            this.PassField2.MaxLength = 50;
             this.PassField2.Name = "PassField2";
             this.PassField2.Size = new System.Drawing.Size(216, 34);
             this.PassField2.TabIndex = 7;
@@ -265,6 +269,7 @@ namespace cutting_chart
             this.PassField.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PassField.ForeColor = System.Drawing.SystemColors.GrayText;
             this.PassField.Location = new System.Drawing.Point(79, 280);
+            this.PassField.MaxLength = 50;
             this.PassField.Name = "PassField";
             this.PassField.Size = new System.Drawing.Size(216, 34);
             this.PassField.TabIndex = 6;
@@ -277,9 +282,11 @@ namespace cutting_chart
             this.NameField.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameField.ForeColor = System.Drawing.SystemColors.GrayText;
             this.NameField.Location = new System.Drawing.Point(79, 54);
+            this.NameField.MaxLength = 50;
             this.NameField.Name = "NameField";
             this.NameField.Size = new System.Drawing.Size(216, 34);
             this.NameField.TabIndex = 2;
+            this.NameField.Text = "Имя";
             this.NameField.Enter += new System.EventHandler(this.NameField_Enter);
             this.NameField.Leave += new System.EventHandler(this.NameField_Leave);
             // 
@@ -293,7 +300,7 @@ namespace cutting_chart
             this.TopBorder.Location = new System.Drawing.Point(0, 0);
             this.TopBorder.Name = "TopBorder";
             this.TopBorder.Size = new System.Drawing.Size(384, 23);
-            this.TopBorder.TabIndex = 5;
+            this.TopBorder.TabIndex = 0;
             this.TopBorder.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TopBorder_MouseDown);
             this.TopBorder.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TopBorder_MouseMove);
             // 
@@ -305,7 +312,7 @@ namespace cutting_chart
             this.RegistrationLabel.Location = new System.Drawing.Point(3, 2);
             this.RegistrationLabel.Name = "RegistrationLabel";
             this.RegistrationLabel.Size = new System.Drawing.Size(101, 21);
-            this.RegistrationLabel.TabIndex = 2;
+            this.RegistrationLabel.TabIndex = 0;
             this.RegistrationLabel.Text = "Регистрация";
             // 
             // CloseAppButton
@@ -335,6 +342,7 @@ namespace cutting_chart
             this.Controls.Add(this.TopBorder);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RegistrationForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistrationForm";
             this.BackGroundPic.ResumeLayout(false);
             this.BackGroundPic.PerformLayout();

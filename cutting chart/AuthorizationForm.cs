@@ -19,8 +19,6 @@ namespace cutting_chart
 
             LoginField.Text = "Логин";
             PassField.Text = "Пароль";
-            //this.PassField.AutoSize = false;
-            //this.PassField.Size = new Size(this.PassField.Size.Width, 30);
         }
         #region [LoginField]
         private void LoginField_Enter(object sender, EventArgs e)
@@ -82,6 +80,7 @@ namespace cutting_chart
         #endregion
 
         #region [TopBorder_MouseMove]
+
         Point lastPoint;
         private void TopBorder_MouseMove(object sender, MouseEventArgs e)
         {
@@ -181,7 +180,11 @@ namespace cutting_chart
             adapter.Fill(table);
 
             if (table.Rows.Count == 1)
-                MessageBox.Show("Successfully");
+            {
+                this.Hide();
+                Cutting_chart cutting_Chart = new Cutting_chart();
+                cutting_Chart.Show();
+            }
             else
                 MessageBox.Show("Unsuccessfully");
 
