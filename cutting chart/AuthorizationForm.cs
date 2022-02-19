@@ -19,6 +19,7 @@ namespace cutting_chart
 
             LoginField.Text = "Логин";
             PassField.Text = "Пароль";
+            
         }
         #region [LoginField]
         private void LoginField_Enter(object sender, EventArgs e)
