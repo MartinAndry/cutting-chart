@@ -15,8 +15,8 @@ namespace cutting_chart
         public Cutting_chart()
         {
             InitializeComponent();
-
         }
+
 
         #region [CloseAppButton]
         private void CloseAppButton_Click(object sender, EventArgs e)
@@ -54,9 +54,47 @@ namespace cutting_chart
 
         #endregion
 
-        private void CreateToolStripMenuItem_Click(object sender, EventArgs e)
-        {
 
+        #region [Change_Size]
+        private void RightBorder_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastPoint = new Point(e.X);
         }
+
+        private void RightBorder_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Width += e.X - lastPoint.X;
+            }
+        }
+
+        private void DownBorder_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastPoint = new Point(e.Y);
+        }
+
+        private void DownBorder_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Height += e.Y - lastPoint.Y;
+            }
+        }
+
+        private void CornerPanel_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastPoint = new Point(e.X, e.Y);
+        }
+
+        private void CornerPanel_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Width += e.X - lastPoint.X;
+                this.Height += e.Y - lastPoint.Y;
+            }
+        }
+        #endregion
     }
 }
